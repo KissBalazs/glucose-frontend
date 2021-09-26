@@ -6,8 +6,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'glucose-levels', pathMatch: 'full' },
   {
     path: 'glucose-levels',
-    component: GlucoseLevelsTableComponent
-  },
+    loadChildren: () => import('./glucose-levels/glucose-levels.module')
+      .then((m) => m.GlucoseLevelsModule),  },
 ];
 
 @NgModule({

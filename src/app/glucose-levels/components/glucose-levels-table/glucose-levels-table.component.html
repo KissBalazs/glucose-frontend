@@ -1,0 +1,49 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <button mat-button color="primary" (click)="loadData()">Reload data</button>
+  <div class="mat-elevation-z8" >
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+
+    <div class="example-table-container">
+
+      <table mat-table [dataSource]="data" class="example-table"
+             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>#</th>
+          <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="start">
+          <!--        todo: Should uitilize a dictionary-based i18n solution instead of hard-wired english strings.-->
+          <!--        for instance: ngx-translate, this could be {{"GLUCOSE_TABLE.START" | translate }}-->
+          <th mat-header-cell *matHeaderCellDef>Start</th>
+          <td mat-cell *matCellDef="let row">{{row.start | date}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="stop">
+          <th mat-header-cell *matHeaderCellDef>Stop</th>
+          <td mat-cell *matCellDef="let row">{{row.stop | date}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="owner">
+          <th mat-header-cell *matHeaderCellDef>owner</th>
+          <td mat-cell *matCellDef="let row">{{row.owner?.username}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" [colSpan]="displayedColumns.length">
+            No data matching the filter
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <mat-paginator [length]="data?.count" [pageSize]="30"  aria-label="Select page"></mat-paginator>
+  </div>
+</div>
+
+
