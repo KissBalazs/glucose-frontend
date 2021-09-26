@@ -10,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Commands
 - `ng serve` to start a dev server.  `http://localhost:4200/` is a CORS exception which can connect to the database.
 - `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  - please note that due to time limitiations, I did not had the time to cover the application with appropriate coverage volume. 
 - `npm run documentation` to genearte and serve Frontend Code Documentation.
  
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

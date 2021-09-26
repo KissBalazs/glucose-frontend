@@ -24,9 +24,9 @@ export class AuthService {
       username: 'admin',
       password: 'admin'
     }
-    this._httpClient.post<ITokenResponse>('http://127.0.0.1:8000/api-token-auth/', body).subscribe(
+    return this._httpClient.post<ITokenResponse>('http://127.0.0.1:8000/api-token-auth/', body).subscribe(
       (res: ITokenResponse) => {
-        this.authTokenSubject.next(res.token)
+        this.authTokenSubject.next(res?.token)
       }, err => {
         console.error("err: ", err)
       }

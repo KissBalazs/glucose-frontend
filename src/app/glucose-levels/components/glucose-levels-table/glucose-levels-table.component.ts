@@ -10,9 +10,9 @@ import {GlucoseLevelsService} from '../../services/glucose-levels.service';
 })
 export class GlucoseLevelsTableComponent implements OnInit {
   isLoadingResults = true;
-  data: any; // todo: create interface
-
-  displayedColumns = ['id', 'start', 'stop', 'owner']
+  data: LevelDTO[] = [];
+  displayedColumns = ['id', 'start', 'stop', 'owner', 'gerat', 'seriennummer', 'geratezeitstempel']
+  itemsCount: number | undefined = 0;
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
@@ -34,7 +34,8 @@ export class GlucoseLevelsTableComponent implements OnInit {
           return;
         }
         this.data = res.results;
-      }, err => {
+        this.itemsCount = res.count;
+    }, err => {
         this.isLoadingResults = false;
         // todo: properly handle errors in the application
         console.error(err);
@@ -47,9 +48,9 @@ export class GlucoseLevelsTableComponent implements OnInit {
 
 // todo: normally, this would go to a separate file
 export interface IRestBaseResponse<T> {
-  count: number,
-  next: any,
-  previous: any,
+  count?: number,
+  next?: any,
+  previous?: any,
   results: Array<T>
 }
 
@@ -59,5 +60,8 @@ export interface LevelDTO {
   id: number,
   start: string,
   stop: string,
+  gerat: string,
+  seriennummer: string,
+  geratezeitstempel: string, // todo: create date formatter pipe for special date format
   owner: { username: string }
 }
