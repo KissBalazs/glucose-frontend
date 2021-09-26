@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 
+/**
+ * Authentication service.
+ * @param  authTokenSubject is the async, behaviour subject representation of the auth token of the user.
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  // todo: replace
-  public authToken: string | null = null;
 
   private authTokenSubject: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null)
 

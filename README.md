@@ -15,6 +15,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build
+## Documentation
+- Documentation can be view in the `/documentation` folder, or created by the commands above.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Notes
+- I have implemented a basic token based authorization to the backend, with the CORS exception for angular dev server's port(4200)
+- I have created a very simple data service, which is able to query the backend for data.
+- I have created a minimal DAO representation of the Data.
+- I have spent roughly 1 hour on the Front-end application, to reach this state. I think it serves as a good foundation for every other Task and Bonus objectives, but I have just simtply run out of time to complete them in the 3 our time window.
+- Upon starting the app with `ng serve` and with a running backend, after clicking on the "login" button, hitting the "refresh" button will query real data.
+- I run out of time when I was working on the table filtering and sorting.
+- I created some test, but it's nearly not enough to properly cover the whole app yet.
+- I have left the Debug information (Auth token) in by purpose: of course this is not something we would leave in a production app.

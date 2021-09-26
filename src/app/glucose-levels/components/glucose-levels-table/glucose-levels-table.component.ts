@@ -3,6 +3,10 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {GlucoseLevelsService} from '../../services/glucose-levels.service';
 
+/**
+ * Component to display the Glucose values to the users.
+ * todo: would be nice to extract the table and the filtering into two separate components.
+ */
 @Component({
   selector: 'app-glucose-levels-table',
   templateUrl: './glucose-levels-table.component.html',
@@ -14,14 +18,21 @@ export class GlucoseLevelsTableComponent implements OnInit {
   displayedColumns = ['id', 'start', 'stop', 'owner', 'gerat', 'seriennummer', 'geratezeitstempel']
   itemsCount: number | undefined = 0;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
-  @ViewChild(MatSort) sort: MatSort | undefined;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private readonly service: GlucoseLevelsService) {
   }
 
   ngOnInit(): void {
     this.loadData();
+
+    this.handleSortEvent();
+  }
+
+  // todo: ran out of tiume, should implement sorting here.
+  private handleSortEvent() {
+    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
   }
 
   loadData() {

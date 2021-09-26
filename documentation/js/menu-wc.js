@@ -54,13 +54,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-bbd9654319dee609140b6f9e4370eff5"' : 'data-target="#xs-components-links-module-AppModule-bbd9654319dee609140b6f9e4370eff5"' }>
+                                            'data-target="#components-links-module-AppModule-264f9626a814bb2c91320815578d8f55"' : 'data-target="#xs-components-links-module-AppModule-264f9626a814bb2c91320815578d8f55"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-bbd9654319dee609140b6f9e4370eff5"' :
-                                            'id="xs-components-links-module-AppModule-bbd9654319dee609140b6f9e4370eff5"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-264f9626a814bb2c91320815578d8f55"' :
+                                            'id="xs-components-links-module-AppModule-264f9626a814bb2c91320815578d8f55"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
@@ -70,8 +70,63 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="modules/AppRoutingModule.html" data-type="entity-link" >AppRoutingModule</a>
                             </li>
+                            <li class="link">
+                                <a href="modules/GlucoseLevelsModule.html" data-type="entity-link" >GlucoseLevelsModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-GlucoseLevelsModule-5587c0f0e9e2e2db671e0ca98ee73450"' : 'data-target="#xs-components-links-module-GlucoseLevelsModule-5587c0f0e9e2e2db671e0ca98ee73450"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-GlucoseLevelsModule-5587c0f0e9e2e2db671e0ca98ee73450"' :
+                                            'id="xs-components-links-module-GlucoseLevelsModule-5587c0f0e9e2e2db671e0ca98ee73450"' }>
+                                            <li class="link">
+                                                <a href="components/GlucoseLevelsTableComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GlucoseLevelsTableComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/GlucoseLevelsRoutingModule.html" data-type="entity-link" >GlucoseLevelsRoutingModule</a>
+                            </li>
                 </ul>
                 </li>
+                        <li class="chapter">
+                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
+                                'data-target="#xs-injectables-links"' }>
+                                <span class="icon ion-md-arrow-round-down"></span>
+                                <span>Injectables</span>
+                                <span class="icon ion-ios-arrow-down"></span>
+                            </div>
+                            <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                                <li class="link">
+                                    <a href="injectables/AuthService.html" data-type="entity-link" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/GlucoseLevelsService.html" data-type="entity-link" >GlucoseLevelsService</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#interfaces-links"' :
+                            'data-target="#xs-interfaces-links"' }>
+                            <span class="icon ion-md-information-circle-outline"></span>
+                            <span>Interfaces</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
+                            <li class="link">
+                                <a href="interfaces/IRestBaseResponse.html" data-type="entity-link" >IRestBaseResponse</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITokenResponse.html" data-type="entity-link" >ITokenResponse</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/LevelDTO.html" data-type="entity-link" >LevelDTO</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#miscellaneous-links"'
                             : 'data-target="#xs-miscellaneous-links"' }>

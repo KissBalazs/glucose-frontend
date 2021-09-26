@@ -1,15 +1,15 @@
-<div fxLayout="column" fxLayoutAlign="start stretch">
+<div fxLayout="column" fxLayoutAlign="start center">
   <button mat-button color="primary" (click)="loadData()">Reload data</button>
-  <div class="mat-elevation-z8" >
-    <div class="example-loading-shade"
+  <div class="mat-elevation-z8 table-container" >
+    <div class="loading-shade"
          *ngIf="isLoadingResults">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
 
-    <div class="example-table-container">
+    <div >
 
       <table mat-table [dataSource]="data" class="example-table"
-             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+             matSort matSortActive="start" matSortDisableClear matSortDirection="desc">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>#</th>
           <td mat-cell *matCellDef="let row">{{row.id}}</td>
@@ -18,32 +18,32 @@
         <ng-container matColumnDef="start">
           <!--        todo: Should uitilize a dictionary-based i18n solution instead of hard-wired english strings.-->
           <!--        for instance: ngx-translate, this could be {{"GLUCOSE_TABLE.START" | translate }}-->
-          <th mat-header-cell *matHeaderCellDef>Start</th>
+          <th mat-header-cell mat-sort-header="start" *matHeaderCellDef>start</th>
           <td mat-cell *matCellDef="let row">{{row.start | date}}</td>
         </ng-container>
 
         <ng-container matColumnDef="stop">
-          <th mat-header-cell *matHeaderCellDef>Stop</th>
+          <th mat-header-cell mat-sort-header="stop" *matHeaderCellDef>stop</th>
           <td mat-cell *matCellDef="let row">{{row.stop | date}}</td>
         </ng-container>
 
         <ng-container matColumnDef="owner">
-          <th mat-header-cell *matHeaderCellDef>owner</th>
+          <th mat-header-cell mat-sort-header="owner" *matHeaderCellDef>owner</th>
           <td mat-cell *matCellDef="let row">{{row.owner?.username}}</td>
         </ng-container>
 
         <ng-container matColumnDef="gerat">
-          <th mat-header-cell *matHeaderCellDef>gerat</th>
+          <th mat-header-cell mat-sort-header="gerat" *matHeaderCellDef>gerat</th>
           <td mat-cell *matCellDef="let row">{{row.gerat}}</td>
         </ng-container>
 
         <ng-container matColumnDef="seriennummer">
-          <th mat-header-cell *matHeaderCellDef>seriennummer</th>
+          <th mat-header-cell mat-sort-header="seriennummer" *matHeaderCellDef>seriennummer</th>
           <td mat-cell *matCellDef="let row">{{row.seriennummer}}</td>
         </ng-container>
 
         <ng-container matColumnDef="geratezeitstempel">
-          <th mat-header-cell *matHeaderCellDef>geratezeitstempel</th>
+          <th mat-header-cell mat-sort-header="geratezeitstempel" *matHeaderCellDef>geratezeitstempel</th>
           <td mat-cell *matCellDef="let row">{{row.geratezeitstempel}}</td>
         </ng-container>
 
@@ -59,6 +59,34 @@
 
     <mat-paginator [length]="itemsCount" [pageSize]="10"  aria-label="Select page"></mat-paginator>
   </div>
+
+  <div  fxLayout="row" fxLayoutAlign="start" fxLayoutGap="20px">
+    <mat-form-field>
+      <mat-label>User_ID</mat-label>
+      <mat-select>
+<!--        todo: example users-->
+        <mat-option>user1</mat-option>
+        <mat-option>user2</mat-option>
+        <mat-option>user3</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>start</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>stop</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <button mat-stroked-button color="primary">Go!</button>
+
+
+  </div>
 </div>
+
+
 
 

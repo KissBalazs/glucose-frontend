@@ -4,6 +4,9 @@ import {Observable, of} from 'rxjs';
 import {AuthService} from './auth.service';
 import { catchError, map } from 'rxjs/operators';
 
+/**
+ * This service provides the REST calls to the Glucose table.
+ */
 @Injectable({
   providedIn: 'root'
 })
